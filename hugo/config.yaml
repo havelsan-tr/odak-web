@@ -1,0 +1,65 @@
+baseURL: https://odak.works
+languageCode: tr-tr
+title: HAVELSAN ODAK | HAVELSAN
+theme: liman-hugo-v3
+googleAnalytics:
+relativeURLs: true
+disableKinds:
+  - taxonomy
+  - taxonomyTerm
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+menu:
+  main:
+  - identifier: home
+    name: "Ana Sayfa"
+    url: "/"
+    weight: 1
+  - identifier: about
+    name: "Keşfedin"
+    url: ""
+    weight: 2
+  footer:
+  - identifier: diger
+    name: "/images/odaklogotrans.png"
+  - identifier: havelsan
+    parent: diger
+    name: HAVELSAN
+    url: https://www.havelsan.com.tr/
+  - identifier: aciklab
+    parent: diger
+    name: Açıklab
+    url: https://www.aciklab.org/
+params:
+  openGraph: true
+  description: HAVELSAN ODAK Veritabanı Yönetim Sistemi
+  navbarlogo:
+    main:
+      image: odaklogotrans.png
+    sub:
+      image: sub.svg
+  hero:
+    - title: ODAK
+      subtitle: Veritabanı Yönetim Sistemi
+
+  section_about: 
+    video_link: "https://www.youtu.be/yZyScWN2IbQ"
+    thumbnail: video-holder.png
+    title: HAVELSAN ODAK Veritabanı Yönetim Sistemi
+    text: "HAVELSAN ODAK"
+  
+
+  footer:
+    logo: footer-logo.png
+    socialmedia:
+      - link: https://github.com/aciklab
+        icon: "fab fa-github"
+      - link: https://www.aciklab.org/
+        icon: "fa fa-globe"
+      - link: mailto:aciklab@havelsan.com.tr
+        icon: "fa fa-envelope"
+module:
+  imports:
+    path: "github.com/gohugoio/hugo-mod-bootstrap-scss-v4"
