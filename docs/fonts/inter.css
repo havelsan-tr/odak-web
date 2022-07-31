@@ -41,6 +41,7 @@
 #hero{
      min-height: 400px; 
   
-     background-image: url('/hugo/public/images/odak-yatay1.jpg')!important; 
+     /* background-image: url('/hugo/public/images/odak-yatay1.jpg')!important;  */
+     
      background-size: cover;
 }
