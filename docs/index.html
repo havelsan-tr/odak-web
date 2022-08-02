@@ -1,0 +1,71 @@
+<!doctype html><html lang=tr-tr><head>
+<meta name=generator content="Hugo 0.92.1">
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>HAVELSAN ODAK | HAVELSAN</title>
+<meta property="og:title" content="HAVELSAN ODAK | HAVELSAN">
+<meta property="og:description" content="HAVELSAN ODAK Veritabanı Yönetim Sistemi">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://odak.works/">
+<meta name=description content="HAVELSAN ODAK Veritabanı Yönetim Sistemi">
+<link rel=icon href=./fav.png type=image/png>
+<link rel=stylesheet href=./fonts/fontawesome.css>
+<link rel=stylesheet href=./fonts/inter.css>
+<link rel=stylesheet href=https://odak.works/scss/main.min.css>
+</head><body>
+<style>body{background:url(/images/180X100_ODAK_DAVETIYE.jpg)no-repeat 50% fixed;background-size:cover}.form-group>label{font-weight:600;font-size:14px;text-transform:uppercase;color:rgba(0,0,0,.7)}.form-control{border-bottom:2px rgba(0,0,0,.2)solid}</style>
+<div class="modal fade" id=form tabindex=-1 role=dialog aria-labelledby=formLabel aria-hidden=true>
+<div class="modal-dialog modal-dialog-centered" role=document>
+<div class=modal-content>
+<div class=modal-header>
+<h5 class=modal-title id=formLabel>Katılım Formu</h5>
+<button type=button class=close data-dismiss=modal aria-label=Close>
+<span aria-hidden=true>&#215;</span>
+</button>
+</div>
+<div class=modal-body>
+<div id=uyari></div>
+<form id=contact method=post>
+<div class=form-group>
+<label for=name>İsim, soyisim<span style=color:red>*</span></label>
+<input name=name type=text class=form-control id=name>
+</div>
+<div class=form-group>
+<label for=email>E-posta adresi<span style=color:red>*</span></label>
+<input name=email type=email class=form-control id=email>
+</div>
+<div class=form-group>
+<label for=kurum-adi>Kurum Adı<span style=color:red>*</span></label>
+<input name=kurum-adi type=text class=form-control id=kurum-adi>
+</div>
+<div class=form-group>
+<label for=phone>Telefon</label>
+<input name=phone type=text class=form-control id=phone>
+</div>
+<div class=form-group>
+<label for=position>Çalıştığınız Pozisyon</label>
+<input name=position type=text class=form-control id=position>
+</div>
+<small>
+Katılım formu reCAPTCHA from Google ile korunmaktadır.<br>
+<a href=https://policies.google.com/privacy>Gizlilik Politikası</a>
+<a href=https://policies.google.com/terms>Hizmet Koşulları</a></small> <br> <br>
+</div>
+<div class=modal-footer>
+<button type=button class="btn btn-dark mr-2" data-dismiss=modal>Kapat</button>
+<button type=submit id=contactButton class="btn btn-primary">Gönder</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</main>
+<script src=https://code.jquery.com/jquery-3.6.0.min.js integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js integrity=sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct crossorigin=anonymous></script>
+<script>$(document).ready(function(){$('#form').modal('show')})</script>
+<script src="https://www.google.com/recaptcha/api.js?render=6Ldenj4hAAAAAIhvhz5kBsv3ZtpyTtX051DEX_BT"></script>
+<script>$('#contact').on('submit',function(a){a.preventDefault(),a.stopImmediatePropagation(),a.stopPropagation(),grecaptcha.ready(function(){grecaptcha.execute('6Ldenj4hAAAAAIhvhz5kBsv3ZtpyTtX051DEX_BT',{action:'subscribe_newsletter'}).then(function(a){$('#contact').prepend('<input type="hidden" name="token" value="'+a+'">'),$('#contact').prepend('<input type="hidden" name="action" value="subscribe_newsletter">'),$.ajax({type:"POST",url:"https://ws.aciklab.org/odak_davetiye",data:$('#contact').serialize(),success:function(a){$('#contact')[0].reset(),$("#uyari").html(`<div class="alert alert-success" role="alert">
+        ${a}
+      </div>`)}})})})})</script>
+</body>
+</html>
